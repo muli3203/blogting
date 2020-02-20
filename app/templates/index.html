@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+<!DOCTYPE html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Happy+Monkey&display=swap" rel="stylesheet">
+
+</head>
+{% block content %}
+<div class="wrapper">
+  <div style="text-align:center; font-size:30px;">
+    <span style="font-size:150px; font-family: 'Happy monkey', cursive; text-align:center;"
+      class="text-white">Blog</span>
+  </div>
+  <div class="quote" style=" font-size: larger; border-left: 3px solid black; border-right: 3px solid black; text-align: center;margin-left: 25%;margin-right: 25%; margin-top: 9%; font-family: 'Happy Monkey', cursive;">
+    <p class="">{{quote.quote}}</p>
+    <hr class="my-4">
+    <p>Author:- {{quote.author}}</p>
+  </div>
+
+  {% endblock %}

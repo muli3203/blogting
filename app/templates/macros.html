@@ -1,0 +1,55 @@
+<!-- Displaying comments macro -->
+
+{% macro displayComments(list_of_comments) %}
+{% for comment in list_of_comments  %}
+<div class="row" style="font-family: 'Happy monkey', cursive;">
+    
+          <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4">
+            <h4>Author</h4>
+            <p>{{comment.user.username}}</p>
+          </div>
+          <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8">
+            <h2> <a href="{{url_for('main.single_comment',id=comment.id)}}">{{comment.pitch_title}}</a> </h2>
+          </div>
+        </div>
+
+{% endfor %}
+{% endmacro %}
+
+{% macro displayBlogsInCategories(blog,id)%}
+  {% for blog in blog %}
+    {% if blog.categories ==id%}
+  <div class="row">
+      <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4">
+    <div class="card">
+      <div class="card-body align-self-center mx-auto text-center" style="background-color: white; ">
+        
+          <h4 style="font-size: 30px;">{{blog.username}}</h4>
+          <hr>
+          <p class="card-text justify-content-center" style="font-size: 25px;" >{{blog.blog}}</p>
+          <hr>
+          <br>
+
+          <a href="{{url_for('main.new_comment',id=blog.id)}}" class="jk">
+            <button type="button" class="btn btn-success">Add a Comment</button>
+          </a>
+        <br>
+        <br>
+          <a href="{{url_for('main.new_comment',id=blog.id)}}">
+            <button type="button" class="btn btn-danger">View Comments</button>
+          </a>
+        <br>
+        <br>
+          <a href="{{url_for('main.new_comment',id=blog.id)}}">
+            <button type="button" class="btn btn-warning">Vote</button>
+          </a>
+      </div>
+    </div> 
+    <br>
+    <br>
+    <br>
+    </div>
+  </div>
+    {% endif%}
+  {% endfor %}
+{% endmacro%}

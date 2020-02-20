@@ -1,0 +1,46 @@
+
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf%}
+
+{% block content %}
+<div class="container" style="font-family: 'Happy monkey', cursive;">
+    <div class="page-header">
+        <h1> BLOG Comments </h1>
+    </div>
+    <div class="media">
+        <div class="media-left">
+            <a href="{{url_for('main.profile', uname=blog.user.username)}}">
+                <img class="media-object" src="..." alt="...">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">
+                <a href="{{url_for('main.profile', uname=blog.user.username)}}">{{ blog.user.username }}</a>
+            </h4>
+            <p>{{ blog.content }}</p>
+            <div class="media-body">
+                <ul class="media-list">
+                    {% for comment in comments %}
+                    <li class="media">
+                        <div class="media-left">
+                            <a href="{{url_for('main.profile', uname=comment.user.username)}}">
+                                <img class="media-object" src="..." alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a
+                                    href="{{url_for('main.profile', uname=blog.user.username)}}">{{ comment.user.username }}</a>
+                            </h4>
+                            <p>{{ comment.comment }}</p>
+
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {{wtf.quick_form(comment_form)}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

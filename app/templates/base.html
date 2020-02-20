@@ -1,0 +1,18 @@
+{% extends 'bootstrap/base.html'%}
+
+{% include 'navbar.html' %}
+
+{% block title %}
+{% if title %}{{ title }} - Blog-World{% else %}Welcome to Blog-World{% endif %}
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link href="https://fonts.googleapis.com/css?family=Happy+Monkey&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

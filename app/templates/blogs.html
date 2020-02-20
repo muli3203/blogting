@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+<div class="container" style="font-family: 'Happy monkey', cursive;">
+    <div class="page-header">
+        {% if category %}
+        <h1> {{ category | upper }} blogs </h1>
+        {% else %}
+        <h1> All blogs </h1>
+        {% endif %}
+    </div>
+    {% for blog in blogs %}
+    <div class="media">
+        <div class="media-left">
+            <a href="{{url_for('main.profile', uname=blog.user.username)}}">
+                <img class="media-object" src="..." alt="...">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading"><a
+                    href="{{url_for('main.profile', uname=blog.user.username)}}">{{ blog.user.username }}</a></h4>
+            <p>{{ blog.content }}</p>
+            <a href="{{url_for('main.view_comments', blog_id=blog.id)}}" class="btn btn-default btn-sm active"
+                role="button">Comments</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
