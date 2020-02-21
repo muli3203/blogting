@@ -48,7 +48,7 @@ def new_blog():
         new_blog  = Blog(content=blog, user=current_user)
 
         new_blog.save_blog()
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.blogs"))
 
     return render_template("new_blog.html", new_blog_form=form)
 

@@ -16,4 +16,4 @@ def get_quotes():
         get_quotes_data = url.read()
         get_quotes_response = json.loads(get_quotes_data)
         
-        return get_quotes_response
+    return get_quotes_response
