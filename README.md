@@ -13,6 +13,15 @@ Cheryl Wanja
 
 # Project Description.
 
+Blog-ting is a web based blogging site where different users can come together and share a wide set of knowledge on the different topics of the world.
+Talk about the weather, politics ,entertainment and so much more..
+a user,  can comment on blog posts
+a user,  can view the most recent posts
+a user,  recieves an email alert when a new post is made by joining a subscription.
+a user,  can see random quotes on the site
+a writer, can sign in to the blog.
+a writer, can create a blog from the application.
+
 
 # Project-Setup Instructions.
 
